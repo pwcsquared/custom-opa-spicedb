@@ -2,12 +2,12 @@ package builtins
 
 import (
 	"errors"
-	"fmt"
 	authzedpb "github.com/authzed/authzed-go/proto/authzed/api/v1"
 	"github.com/open-policy-agent/opa/ast"
 	"github.com/open-policy-agent/opa/rego"
 	"github.com/open-policy-agent/opa/types"
 	"github.com/pwcsquared/custom-opa/custom-opa-spicedb/plugins/authzed"
+        "github.com/thoas/go-funk"
 	"strings"
 )
 
@@ -64,7 +64,16 @@ func lookupResourcesBuiltinImpl(bctx rego.BuiltinContext, resourceTerm, permissi
 		return nil, err
 	}
 
-	result := ast.Boolean(resp.Permissionship == authzedpb.CheckPermissionResponse_PERMISSIONSHIP_HAS_PERMISSION)
+        // for each resp, acc resource_object_id
+        ids := funk.Map(resp, func(r authzedpb.LookupResourcesResponse) string {
+                return r.ResourceObjectId
+        })
+
+        result, idsErr := ast.InterfaceToValue(ids)
+
+        if idsErr != nil { 
+                return nil, idsErr
+        }
 
 	return ast.NewTerm(result), nil
 }
