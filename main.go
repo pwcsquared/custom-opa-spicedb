@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	"github.com/pwcsquared/custom-opa-spicedb/builtins"
-	"github.com/thomasdarimont/custom-opa/custom-opa-spicedb/plugins"
+	"github.com/pwcsquared/custom-opa/custom-opa-spicedb/builtins"
+	"github.com/pwcsquared/custom-opa/custom-opa-spicedb/plugins"
 	"os"
 
 	"github.com/open-policy-agent/opa/cmd"
