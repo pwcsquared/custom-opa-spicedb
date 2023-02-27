@@ -1,4 +1,4 @@
-module github.com/pwcsquared/custom-opa/custom-opa-spicedb
+module github.com/pwcsquared/custom-opa-spicedb
 
 go 1.19
 

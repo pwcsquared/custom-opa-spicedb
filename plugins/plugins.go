@@ -2,7 +2,7 @@ package plugins
 
 import (
 	"github.com/open-policy-agent/opa/runtime"
-	"github.com/pwcsquared/custom-opa/custom-opa-spicedb/plugins/authzed"
+	"github.com/pwcsquared/custom-opa-spicedb/plugins/authzed"
 )
 
 func Register() {
