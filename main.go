@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/thomasdarimont/custom-opa/custom-opa-spicedb/builtins"
+	"github.com/pwcsquared/custom-opa-spicedb/builtins"
 	"github.com/thomasdarimont/custom-opa/custom-opa-spicedb/plugins"
 	"os"
 
