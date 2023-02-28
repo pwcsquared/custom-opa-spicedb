@@ -15,7 +15,7 @@ var lookupResourcesBuiltinDecl = &rego.Function{
 	Name: "authzed.lookup_resources",
 	Decl: types.NewFunction(
 		types.Args(types.S, types.S, types.S), // resource_type, permission, subject
-		types.B),                              // Returns a set?
+		types.A),                              // Returns a set?
 }
 
 // lookupResourcesBuiltinImpl checks the given permission requests against spicedb.
